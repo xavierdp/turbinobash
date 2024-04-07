@@ -1,0 +1,10 @@
+#!/bin/bash
+#NO_DEBUG#
+#C# itself union full
+
+cd $TB_DIR_MODULES
+
+find -L . -mindepth 2 -maxdepth 2 -name "scripts" 2> /dev/null | sed -e "s%./\(.*\)/.*%\1%" -e 's%+.*%%g' -e '/^_/d'  -e '/^\./d' | sort -u
+
+
+return 0

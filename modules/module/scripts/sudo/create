@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# #C# $(tb module sudo/list)
+
+tb_getopt module - $@
+
+[ -d $TB_DIR_MODULES/$module ] && stop_err "module '$module' exists"
+
+mkdir -p $TB_DIR_MODULES/$module/scripts
+
+cp -r $TB_DIR_MODULES/module/template/* $TB_DIR_MODULES/$module
+
